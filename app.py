@@ -90,7 +90,7 @@ st.dataframe(input_df)
 if st.button("Predict Churn"):
     # Apply feature engineering matching training
     input_df['TotalCharges'] = pd.to_numeric(input_df['TotalCharges'], errors='coerce').fillna(0)
-    input_df['ChargePerTenure'] = input_df['TotalCharges'] / (input_df['tenure'] + 1)
+    # REMOVE THIS LINE: input_df['ChargePerTenure'] = input_df['TotalCharges'] / (input_df['tenure'] + 1)
     
     # Make prediction
     prediction = model.predict(input_df)[0]
